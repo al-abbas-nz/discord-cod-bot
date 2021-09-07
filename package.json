@@ -4,7 +4,7 @@
   "description": "A Discord Bot that will report your recent match stats to a channel in your Discord server.",
   "main": "index.js",
   "scripts": {
-    "test": "npm run test"
+    "start": "node index.js"
   },
   "author": "supAbs",
   "license": "ISC",
