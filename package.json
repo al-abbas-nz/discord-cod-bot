@@ -1,0 +1,16 @@
+{
+  "name": "discord-cod-bot",
+  "version": "1.0.0",
+  "description": "A Discord Bot that will report your recent match stats to a channel in your Discord server.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "author": "supAbs",
+  "license": "ISC",
+  "dependencies": {
+    "call-of-duty-api": "^2.1.2",
+    "discord.js": "^13.1.0",
+    "dotenv": "^10.0.0"
+  }
+}
