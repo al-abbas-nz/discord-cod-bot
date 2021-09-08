@@ -19,9 +19,35 @@ async function getLifetimeStats(username) {
   }
 }
 
-codLogin();
+async function getRecentMatchDetails() {
+  try {
+    const data = await API.MWcombatmp('votelucky#1331', 'battle');
+    console.log(data.matches[0]);
+    const recentMatch = data.matches[0];
+    const { player } = recentMatch;
+    const statement = `${player.username} got a ${recentMatch.result} on ${
+      recentMatch.map
+    } with a ${parseFloat(recentMatch.playerStats.kdRatio).toFixed(2)} KD (${
+      recentMatch.playerStats.kills
+    } frags to ${
+      recentMatch.playerStats.deaths
+    } deaths). They absolutely smacc'd ${player.mostKilled}. `;
+    console.log(statement);
+    return statement.toString();
+  } catch (Error) {
+    console.error(Error);
+  }
+}
+
+// async function run() {
+//   await codLogin();
+//   await getRecentMatchDetails();
+// }
+
+// run();
 
 module.exports = {
+  getRecentMatchDetails,
   getLifetimeStats,
   codLogin,
 };

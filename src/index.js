@@ -11,15 +11,12 @@ client.login(process.env.DISCORD_BOT_TOKEN);
 client.on('ready', () => console.log('Bot is online!'));
 
 client.on('messageCreate', async (message) => {
-  if (message.author.username == 'sup_abs') {
-    cod.codLogin();
-    let response = await cod.getLifetimeStats(message.content);
-    console.log(JSON.stringify(response.level, 2));
-    message.reply(
-      `bruh your KD is ${parseFloat(
-        JSON.stringify(response.lifetime.all.properties.kdRatio)
-      ).toFixed(2)}`
-    );
+  if (message.author.username == 'luckyboy') {
+    await cod.codLogin();
+    let response = await cod.getRecentMatchDetails();
+    message.reply(response);
     // message.reply('you broke it');
+  } else {
+    return;
   }
 });
